@@ -2,10 +2,7 @@
 from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
-
 from base import Drawing
-
-
 class DDA_Line(Drawing):
     def display_function(self):
         x1,x2,y1,y2 = 120.0,300.0,50.0,350.0
