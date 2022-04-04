@@ -12,7 +12,10 @@ class MCA(Drawing):
         r = 89.0
         x=0
         y=r
-        P= 5/4 -r
+        if type(r) == 'float':
+            P= 5/4 -r
+        else:
+            P = 1-r
 
                 
         
@@ -20,7 +23,7 @@ class MCA(Drawing):
         glBegin(GL_POINTS)
     
         k = 0
-        while x <= y:
+        while x < y:
             print(k)
             k=k+1
 

@@ -4,11 +4,8 @@ from OpenGL.GLU import *
 import math
 from base import Drawing
 
-
 class PieChart(Drawing):
     def display_function(self):
-
-
         xc,yc=200.0,200.0
         r = 90.0
         x=0
@@ -17,13 +14,10 @@ class PieChart(Drawing):
         datas = [120,200,260,300,190]
         total = 0
         for i in range(len(datas)):
-            total += datas[i]
-
-        print(total)           
+            total += datas[i]         
         glColor3f(0.2,0.5,0.4) #RGB    
         glClear(GL_COLOR_BUFFER_BIT)
         glBegin(GL_POINTS)
-    
         k = 0
         while x <= y:
         
@@ -46,13 +40,10 @@ class PieChart(Drawing):
             glVertex2d(round(y + yc),round(x + xc))
             glVertex2d(round(y+ yc),round(-x + xc))
             glVertex2d(round(-y + yc),round(x + xc))
-            glVertex2d(round(-y + yc),round(-x + xc))
-        
+            glVertex2d(round(-y + yc),round(-x + xc))       
         glEnd()
         self.display(xc,yc,r,datas,total)
-        glFlush()
-        
-
+        glFlush()     
 
     def display(self,xc,yc,r,datas,total):
         angle=0
@@ -64,12 +55,7 @@ class PieChart(Drawing):
             y =  yc + r*math.sin(angle)
             glVertex2d(x,y)
             glVertex2d(xc,yc)
-        glEnd()
-
-    
- 
-    
-  
+        glEnd()      
 pie_chart =  PieChart()
 pie_chart.Driver()
 
